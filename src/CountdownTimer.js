@@ -3,7 +3,7 @@ import './countdownTimer.css'; // Create this file for styling if needed
 
 const CountdownTimer = () => {
     // Define the target date (October 5, 2024)
-    const targetDate = new Date('2024-10-05T00:00:00');
+    const targetDate = new Date('2026-08-01T15:15:00');
 
     // Define state variables to store remaining time
     const [remainingDays, setRemainingDays] = useState(0);

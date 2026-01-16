@@ -6,7 +6,6 @@ import backgroundImage from './pictures/IMG_3224-min.JPG';
 import backgroundImage2 from './pictures/DSC06939-min.JPG';
 import backgroundImage3 from './pictures/IMG_3209-min.JPG';
 import decorImage1 from './pictures/Nevtelen-terv-17.png';
-import decorImage2 from './pictures/Nevtelen-terv-18.png';
 import decorImage3 from './pictures/9.png';
 import decorImage4 from './pictures/Nevtelen-terv-25.png';
 import CountdownTimer from "./CountdownTimer";
@@ -24,7 +23,7 @@ const App = () => {
                         {/*<div className="segment-title">Kezdőlap</div>*/}
                         <img className="decor1" src={decorImage1} alt="Decor Image 1"/>
                         <div>
-                            <div className="handwriting">Sári & Peti</div>
+                            <div className="handwriting">Kata & Marci</div>
                             <span className="generic-text">Szeretettel hívunk meg Titeket, hogy együtt ünnepeljük az esküvőnk napját.</span>
                         </div>
                         {/*<img className="decor2" src={decorImage2} alt="Decor Image 2"/>*/}
@@ -45,10 +44,10 @@ const App = () => {
                             {/*<div className="date-generic">VEGYÉL RÉSZT A NAGY NAPON</div>*/}
                             <div className="line-container">
                                 <div className="horizontal-line"></div>
-                                <div className="actual-date"> 2024. Október 5.</div>
+                                <div className="actual-date"> 2026. Augusztus 1.</div>
                                 <div className="horizontal-line"></div>
                             </div>
-                            <div className="date-generic2">Budapest, Gückler Károly kilátó, 15:00</div>
+                            <div className="date-generic2">Budapest, Mátyás Templom, 15:15</div>
                         </div>
                         <CountdownTimer/> {/* Place the CountdownTimer component here */}
                     </div>
@@ -71,9 +70,9 @@ const App = () => {
                         </div>
                         <div className="helyszin-text">
                             <div className="sub-title">Szertatás:</div>
-                            <div className="sub-text">&#8287;&#8287;&#8287;Gückler Károly kilátó, a Hármashatár-hegy tetején</div>
+                            <div className="sub-text">&#8287;&#8287;&#8287;Mátyás Templom, Budai Vár</div>
                             <div className="sub-title">Vacsora és lagzi:</div>
-                            <div className="sub-text">&#8287;&#8287;&#8287;Horizont Rendezvényház, Budapest, Hármashatárhegyi út 3.</div>
+                            <div className="sub-text">&#8287;&#8287;&#8287;ÖbölHáz Rendezvényközpont, Budapest, Kopaszi-gát 2. 1117</div>
                         </div>
                     </div>
                     <div className="helyszin-container">
@@ -82,11 +81,11 @@ const App = () => {
                         </div>
                         <div className="helyszin-text">
                             <div className="sub-title">Kezdés:</div>
-                            <div className="sub-text">&#8287;&#8287;&#8287;15:00
+                            <div className="sub-text">&#8287;&#8287;&#8287;15:15
                             </div>
                             <div className="sub-title">Szállás:</div>
                             <div className="sub-text">&#8287;&#8287;&#8287;Korlátozott mértékben elérhető, így előre egyeztetés szükséges. Kérlek hívd a vőlegényt
-                                (+36 70 348 6197) vagy a menyasszonyt (+36 30 195 2985), ha igényt tartanál a helyszínen szállásra.
+                                (+36 30 316 5634) vagy a menyasszonyt (+36 30 195 2985), ha igényt tartanál a helyszínen szállásra.
                             </div>
                         </div>
                     </div>
