@@ -1,12 +1,12 @@
 .countdown-timer {
     display: flex;
     justify-content: center; /* Center the timer items horizontally */
-    color: #59442e;
+    color: #446e44;
 }
 
 .timer-item {
     flex: 2; /* Prevent items from shrinking */
-    border: 5px double #59442e; /* Set border color to white */
+    border: 5px double #446e44; /* Set border color to white */
     display: flex;
     flex-direction: column;
     align-items: center;
