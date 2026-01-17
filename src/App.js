@@ -9,6 +9,7 @@ import backgroundImage4 from './pictures/WhatsAppImage2026-01-17at11.02.29.jpeg'
 import decorImage1 from './pictures/Nevtelen-terv-17.png';
 import decorImage3 from './pictures/9.png';
 import decorImage4 from './pictures/Nevtelen-terv-25.png';
+import decorImage5 from './pictures/—Pngtree—watercolor floral corner with pink_22767101.png';
 import CountdownTimer from "./CountdownTimer";
 import "@fontsource/great-vibes"
 
@@ -33,7 +34,7 @@ const App = () => {
             </div>
 
             <div id="datum"></div>
-            <img className="decor decor3" src={decorImage3} alt="Decor Image 3"/>
+            <img className="decor decor3" src={decorImage5} alt="Decor Image 3"/>
             <div id="datum-outer">
                 <div className="segment-title handwriting nagy-napon" style={{color: "#446e44"}}>
                     Vegyél részt a nagy napon
@@ -54,7 +55,7 @@ const App = () => {
                     </div>
                 </div>
             </div>
-            <img className="decor decor4" src={decorImage3} alt="Decor Image 4"/>
+            <img className="decor decor4" src={decorImage5} alt="Decor Image 4"/>
 
             <div className="datum-utani-kep" style={{backgroundImage: `url(${backgroundImage4})`}}>
             </div>

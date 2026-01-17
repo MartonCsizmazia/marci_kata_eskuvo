@@ -26,13 +26,14 @@
   height: 28vw;
   position: absolute;
   right: 0;
+  rotate: 90deg;
 }
 
 
 .decor4{
   position: relative;
   left: 0;
-  rotate: 180deg;
+  rotate: 270deg;
   bottom: 250px;
 }
 
@@ -329,7 +330,7 @@
   #kezdolap-content-text{
     top: 17rem;
     font-size: 1.5rem;
-    padding: 0 2rem;
+    padding: 0 0.5rem;
   }
 
   .handwriting{
