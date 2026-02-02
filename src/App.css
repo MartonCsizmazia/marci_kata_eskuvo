@@ -260,9 +260,9 @@
 
 .helyszin-utani-kep{
   margin-top: 3rem;
-  height: 56rem;
+  height: 100rem;
   background-size: cover;
-  background-position: center; /* Center the image */
+  background-position: center;
   background-repeat: no-repeat;
 }
 

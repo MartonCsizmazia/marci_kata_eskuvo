@@ -1,10 +1,10 @@
-// App.js
 import React from 'react';
 import MenuBar from './MenuBar';
 import './App.css';
 import backgroundImage2 from './pictures/WhatsAppImage2026-01-17at13.01.37.jpeg';
-import backgroundImage3 from './pictures/WhatsAppImage2026-01-17at10.57.29.jpeg';
+// import backgroundImage3 from './pictures/WhatsAppImage2026-01-17at10.57.29.jpeg';
 import backgroundImage4 from './pictures/WhatsAppImage2026-01-17at11.02.29.jpeg';
+import backgroundImage5 from './pictures/WhatsAppImage2026-02-02at18.24.38.jpeg';
 import decorImage4 from './pictures/Nevtelen-terv-25.png';
 import decorImage5 from './pictures/—Pngtree—watercolor floral corner with pink_22767101.png';
 import CountdownTimer from "./CountdownTimer";
@@ -95,16 +95,9 @@ const App = () => {
                 </div>
             </div>
 
-
-            <div className="helyszin-utani-kep" style={{backgroundImage: `url(${backgroundImage3})`}}>
+            <div className="helyszin-utani-kep" style={{backgroundImage: `url(${backgroundImage5})`}}>
             </div>
 
-            {/*<div className="datum-utani-kep" style={{backgroundImage: `url(${backgroundImage3})`}}>*/}
-            {/*</div>*/}
-            {/*<div id="program">*/}
-            {/*    <div className="segment-title handwriting">Fontos tudnivalók</div>*/}
-            {/*</div>*/}
-            {/* Add more sections as needed */}
         </div>
     );
 };
