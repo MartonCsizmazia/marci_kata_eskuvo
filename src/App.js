@@ -2,12 +2,9 @@
 import React from 'react';
 import MenuBar from './MenuBar';
 import './App.css';
-import backgroundImage from './pictures/WhatsAppImage2026-01-17at10.56.27.jpeg';
 import backgroundImage2 from './pictures/WhatsAppImage2026-01-17at13.01.37.jpeg';
 import backgroundImage3 from './pictures/WhatsAppImage2026-01-17at10.57.29.jpeg';
 import backgroundImage4 from './pictures/WhatsAppImage2026-01-17at11.02.29.jpeg';
-import decorImage1 from './pictures/Nevtelen-terv-17.png';
-import decorImage3 from './pictures/9.png';
 import decorImage4 from './pictures/Nevtelen-terv-25.png';
 import decorImage5 from './pictures/—Pngtree—watercolor floral corner with pink_22767101.png';
 import CountdownTimer from "./CountdownTimer";
