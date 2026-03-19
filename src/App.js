@@ -36,11 +36,9 @@ const App = () => {
                 <div className="segment-title handwriting nagy-napon" style={{color: "#446e44"}}>
                     Vegyél részt a nagy napon
                 </div>
-                {/*<div id="datum-wrapper" style={{backgroundImage: `url(${backgroundImage2})`}}>*/}
                 <div id="datum-wrapper">
                     <div className="datum-content">
                         <div className="date-text">
-                            {/*<div className="date-generic">VEGYÉL RÉSZT A NAGY NAPON</div>*/}
                             <div className="line-container">
                                 <div className="horizontal-line"></div>
                                 <div className="actual-date"> 2026. Augusztus 1.</div>
@@ -60,8 +58,7 @@ const App = () => {
             <div id="helyszin"></div>
             <img className="decor decor5" src={decorImage4} alt="Decor Image 5"/>
             <div id="helyszin-outer">
-                <div className="segment-title handwriting" style={{color: "#446e44"}}>Helyszín <div className="andsign">&</div> tudnivalók</div>
-                <div className="googleForm"><a href="https://docs.google.com/forms/d/11num8gRay2QrTdex9d2vpXKmu4i612bbpIzAhxqAlVY/edit?ts=6696e568"><span className="kLetter"></span>KÉRLEK KATTINTS A KÉRDŐÍV KITÖLTÉSÉHEZ</a></div>
+                <div className="segment-title handwriting" style={{color: "#446e44"}}>Helyszín </div>
                 <div className="helyszin-es-tudnivalok">
                     <div className="helyszin-container">
                         <div className="helyszin-title">
@@ -74,6 +71,20 @@ const App = () => {
                             <div className="sub-text">&#8287;&#8287;&#8287;ÖbölHáz Rendezvényközpont, Budapest, Kopaszi-gát 2. 1117</div>
                         </div>
                     </div>
+                    <img className="decor decor6" src={decorImage4} alt="Decor Image 6"/>
+                </div>
+                <br/>
+            </div>
+
+            <div className="helyszin-utani-kep" style={{backgroundImage: `url(${backgroundImage5})`}}>
+            </div>
+
+            <div id="tudnivalok"></div>
+            <img className="decor decor5" src={decorImage4} alt="Decor Image 5"/>
+            <div id="tudnivalok-outer">
+                <div className="segment-title handwriting" style={{color: "#446e44"}}>Tudnivalók</div>
+                <div className="googleForm"><a href="https://docs.google.com/forms/d/e/1FAIpQLScf_kajOQ5lPcSra8XT9b_I0TGJxjcHVjAElqYnu0hqATITEQ/viewform?usp=dialog" target="_blank"><span className="kLetter"></span>KÉRLEK KATTINTS A KÉRDŐÍV KITÖLTÉSÉHEZ</a></div>
+                <div className="helyszin-es-tudnivalok">
                     <div className="helyszin-container">
                         <div className="helyszin-title">
                             Tudnivalók
@@ -87,16 +98,13 @@ const App = () => {
                             </div>
                         </div>
                     </div>
-                    <img className="decor decor6" src={decorImage4} alt="Decor Image 6"/>
                 </div>
                 <br/>
                 <div className="hivd-volegenyt" >Kérlek hívd a vőlegényt
                     (+36 30 316 5634) vagy a menyasszonyt (+36 20 291 2555), ha igényt tartanál a helyszínen szállásra.
                 </div>
             </div>
-
-            <div className="helyszin-utani-kep" style={{backgroundImage: `url(${backgroundImage5})`}}>
-            </div>
+            <img className="decor decor7" src={decorImage4} alt="Decor Image 6"/>
 
         </div>
     );

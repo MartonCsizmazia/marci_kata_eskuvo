@@ -42,7 +42,8 @@ const MenuBar = () => {
         <div className="menu">
             <div className="menu-button" onClick={(e) => scrollToSection('kezdolap', e)}><a>Kezdőlap</a></div>
             <div className="menu-button" onClick={(e) => scrollToSection('datum', e)}><a>Dátum</a></div>
-            <div className="menu-button" onClick={(e) => scrollToSection('helyszin', e)}><a>Helyszín & tudnivalók</a></div>
+            <div className="menu-button" onClick={(e) => scrollToSection('helyszin', e)}><a>Helyszín</a></div>
+            <div className="menu-button" onClick={(e) => scrollToSection('tudnivalok', e)}><a>Tudnivalók</a></div>
             {/*<div className="menu-button" onClick={(e) => scrollToSection('program', e)}><a>Fontos Tudnivalók</a></div>*/}
             {/* Add more menu items as needed */}
 
@@ -57,7 +58,8 @@ const MenuBar = () => {
                 <div className={`dropdown-content ${dropdownOpen ? 'open' : ''}`}>
                     <div className="dropdown-item" onClick={(e) => scrollToSection('kezdolap', e)}><a>Kezdőlap</a></div>
                     <div className="dropdown-item" onClick={(e) => scrollToSection('datum', e)}><a>Dátum</a></div>
-                    <div className="dropdown-item" onClick={(e) => scrollToSection('helyszin', e)}><a>Helyszín & tudnivalók</a></div>
+                    <div className="dropdown-item" onClick={(e) => scrollToSection('helyszin', e)}><a>Helyszín</a></div>
+                    <div className="dropdown-item" onClick={(e) => scrollToSection('tudnivalok', e)}><a>Tudnivalók</a></div>
                     {/*<div className="dropdown-item" onClick={(e) => scrollToSection('program', e)}><a>Fontos Tudnivalók</a></div>*/}
                 </div>
             </div>

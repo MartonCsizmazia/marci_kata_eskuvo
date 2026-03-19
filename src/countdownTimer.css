@@ -1,4 +1,5 @@
 .countdown-timer {
+    padding: 2rem 0;
     display: flex;
     justify-content: center; /* Center the timer items horizontally */
     color: #446e44;
@@ -35,6 +36,6 @@
 
     .timer-item {
         flex-basis: 100%; /* Set each item to take up full width on smaller screens */
-        margin: 0px 3px; /* Adjust margin for better spacing */
+        margin: 0 3px; /* Adjust margin for better spacing */
     }
 }

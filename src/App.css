@@ -47,7 +47,13 @@
   position: absolute;
   right: 0;
   rotate: 90deg;
-  bottom: -123px;
+  bottom: -66px;
+}
+
+.decor7{
+    position: absolute;
+    right: 0;
+    rotate: 90deg;
 }
 /*VIRAGOK*/
 
@@ -79,6 +85,7 @@
   background-position: 50% 42%; /* Center the image */
   /*background-position: top center; !* Ensure the top of the image is always in view *!*/
   background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 #kezdolap-content-text{
@@ -89,7 +96,7 @@
 }
 
 .segment-title{
-  padding: 1.3rem;
+  padding: 2rem 0;
   font-size: 4rem !important;
   text-align: center;
 }
@@ -116,7 +123,7 @@
 }
 
 .date-text{
-  margin-bottom: 2rem;
+  margin: 2rem 0;
   color: #446e44;
 }
 
@@ -150,10 +157,11 @@
 
 .datum-utani-kep{
   margin-top: -253px;
-  height: 33rem;
+  height: 50rem;
   background-size: cover;
   background-position: center; /* Center the image */
   background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 #helyszin{
@@ -181,7 +189,7 @@
   top: 0;
   bottom: 30px;
   left: 50%;
-  border-left: 1px solid rgba(90, 90, 90, 0.56); /* Adjust color and thickness as needed */
+  /*border-left: 1px solid rgba(90, 90, 90, 0.56); !* Adjust color and thickness as needed *!*/
 }
 
 .helyszin-container {
@@ -260,10 +268,11 @@
 
 .helyszin-utani-kep{
   margin-top: 3rem;
-  height: 100rem;
+  height: 60rem;
   background-size: cover;
-  background-position: center;
+  background-position: 50% 40%;
   background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 @media screen and (max-width: 1000px) {
@@ -279,6 +288,16 @@
 }
 
 @media screen and (max-width: 650px) {
+    #kezdolap-content-text{
+        top: 40rem;
+        font-size: 1.5rem;
+        padding: 0 0.5rem;
+    }
+
+    .handwriting{
+        font-size: 4rem;
+    }
+
   .decor{
     height: 28vw;
   }
@@ -288,7 +307,7 @@
   }
 
   .decor6{
-      bottom: -146px;
+      bottom: -91px;
   }
 
   .datum-utani-kep{
@@ -326,11 +345,6 @@
 
 @media screen and (max-width: 420px) {
 
-  #kezdolap-content {
-    width: 100%;
-    height: 25rem;
-  }
-
   #kezdolap-content-text{
     top: 17rem;
     font-size: 1.5rem;
@@ -350,15 +364,11 @@
   }
 
     .decor6{
-        bottom: -152px;
+        bottom: -91px;
     }
 
   .line-container{
     gap: 1rem;
-  }
-
-  .datum-utani-kep{
-    height: 16rem;
   }
 
   .nagy-napon{
@@ -378,19 +388,30 @@
     font-size: 1rem; /* Adjusted font size for text */
   }
 
-  .kezdes{
-      margin-bottom: 0rem !important;
+  .kezdes {
+      margin-bottom: 0 !important;
   }
 
-  .hivd-volegenyt{
+  .hivd-volegenyt {
       width: 21rem;
       font-size: 1rem;
   }
+    #kezdolap-content {
+        width: 100%;
+        height: 27rem;
+        background-size: contain;
+        background-position: unset;
+    }
+
+    .datum-utani-kep{
+        height: 27rem;
+        background-size: cover;
+    }
 
     .helyszin-utani-kep{
-        height: 25rem;
+        height: 27rem;
+        background-size: cover;
     }
 
 
 }
-
