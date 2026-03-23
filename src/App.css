@@ -94,6 +94,10 @@
   text-align: center;
 }
 
+.nagy-napon{
+    margin-top: 4rem;
+}
+
 #datum{
   position: relative;
   bottom: 3rem;

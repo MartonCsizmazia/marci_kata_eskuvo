@@ -19,13 +19,10 @@ const App = () => {
 
                 <div id="kezdolap-content" style={{backgroundImage: `url(${backgroundImage2})`}}>
                     <div id="kezdolap-content-text">
-                        {/*<div className="segment-title">Kezdőlap</div>*/}
-                        {/*<img className="decor1" src={decorImage1} alt="Decor Image 1"/>*/}
                         <div>
                             <div className="handwriting">Kata & Marci</div>
                             <span className="generic-text">Szeretettel meghívunk Titeket, hogy együtt ünnepeljük az esküvőnk napját.</span>
                         </div>
-                        {/*<img className="decor2" src={decorImage2} alt="Decor Image 2"/>*/}
                     </div>
                 </div>
             </div>
@@ -36,11 +33,9 @@ const App = () => {
                 <div className="segment-title handwriting nagy-napon" style={{color: "#446e44"}}>
                     Vegyél részt a nagy napon
                 </div>
-                {/*<div id="datum-wrapper" style={{backgroundImage: `url(${backgroundImage2})`}}>*/}
                 <div id="datum-wrapper">
                     <div className="datum-content">
                         <div className="date-text">
-                            {/*<div className="date-generic">VEGYÉL RÉSZT A NAGY NAPON</div>*/}
                             <div className="line-container">
                                 <div className="horizontal-line"></div>
                                 <div className="actual-date"> 2026. Augusztus 1.</div>
