@@ -4,18 +4,22 @@ import './UploadPage.css';
 const SCRIPT_URL =
     'https://script.google.com/macros/s/AKfycbyco9VdsYkpcfcLSw_ofsJPq07GPnKawyUuqPQQHJKE7rd6-Yhk158-ZmSlaMPJtb5L/exec';
 
+const MAX_CONCURRENT_UPLOADS = 3;
+
 export default function UploadPage() {
     const [files, setFiles] = useState([]);
     const [status, setStatus] = useState('');
     const [isUploading, setIsUploading] = useState(false);
     const [progress, setProgress] = useState(0);
-    const [currentFileIndex, setCurrentFileIndex] = useState(0);
+    const [completedFiles, setCompletedFiles] = useState(0);
+    const [activeUploads, setActiveUploads] = useState(0);
 
     function handleFileChange(event) {
         setFiles(Array.from(event.target.files || []));
         setStatus('');
         setProgress(0);
-        setCurrentFileIndex(0);
+        setCompletedFiles(0);
+        setActiveUploads(0);
     }
 
     async function uploadFiles() {
@@ -26,51 +30,106 @@ export default function UploadPage() {
         setIsUploading(true);
         setStatus('');
         setProgress(0);
-        setCurrentFileIndex(1);
+        setCompletedFiles(0);
+        setActiveUploads(0);
+
+        const filesToUpload = [...files];
+        const failedFiles = [];
+
+        let nextFileIndex = 0;
+        let processedFileCount = 0;
+
+        async function uploadWorker() {
+            while (true) {
+                const currentIndex = nextFileIndex;
+                nextFileIndex += 1;
+
+                if (currentIndex >= filesToUpload.length) {
+                    return;
+                }
+
+                const file = filesToUpload[currentIndex];
+
+                setActiveUploads((current) => current + 1);
+
+                try {
+                    await uploadSingleFile(file);
+                } catch (error) {
+                    console.error(`Upload failed for ${file.name}:`, error);
+                    failedFiles.push(file);
+                } finally {
+                    setActiveUploads((current) => Math.max(0, current - 1));
+
+                    processedFileCount += 1;
+
+                    setCompletedFiles(processedFileCount);
+                    setProgress(
+                        Math.round(
+                            (processedFileCount / filesToUpload.length) * 100
+                        )
+                    );
+                }
+            }
+        }
 
         try {
-            for (let index = 0; index < files.length; index++) {
-                const file = files[index];
+            const workerCount = Math.min(
+                MAX_CONCURRENT_UPLOADS,
+                filesToUpload.length
+            );
 
-                setCurrentFileIndex(index + 1);
+            const workers = Array.from(
+                { length: workerCount },
+                () => uploadWorker()
+            );
 
-                const base64Data = await fileToBase64(file);
+            await Promise.all(workers);
 
-                const response = await fetch(SCRIPT_URL, {
-                    method: 'POST',
-                    body: JSON.stringify({
-                        fileName: file.name,
-                        mimeType: file.type || 'application/octet-stream',
-                        data: base64Data
-                    })
-                });
-
-                if (!response.ok) {
-                    throw new Error(`Upload failed: ${response.status}`);
-                }
-
-                const result = await response.json();
-
-                if (!result.success) {
-                    throw new Error(result.error || 'Upload failed.');
-                }
-
-                const completedFiles = index + 1;
-                const newProgress = Math.round(
-                    (completedFiles / files.length) * 100
+            if (failedFiles.length === 0) {
+                setStatus('Köszönjük, a feltöltés sikerült!');
+                setFiles([]);
+            } else if (failedFiles.length === filesToUpload.length) {
+                setStatus(
+                    'A feltöltés nem sikerült. Kérlek, próbáld újra.'
+                );
+                setFiles(failedFiles);
+            } else {
+                setStatus(
+                    `${filesToUpload.length - failedFiles.length} fájl feltöltése sikerült, ` +
+                    `${failedFiles.length} fájlé nem. Kérlek, próbáld újra a megmaradt fájlokkal.`
                 );
 
-                setProgress(newProgress);
+                setFiles(failedFiles);
             }
-
-            setStatus('Köszönjük, a feltöltés sikerült!');
-            setFiles([]);
-            setCurrentFileIndex(0);
         } catch (error) {
             console.error(error);
             setStatus('A feltöltés nem sikerült. Kérlek, próbáld újra.');
         } finally {
             setIsUploading(false);
+            setActiveUploads(0);
+        }
+    }
+
+    async function uploadSingleFile(file) {
+        const base64Data = await fileToBase64(file);
+
+        const response = await fetch(SCRIPT_URL, {
+            method: 'POST',
+            body: JSON.stringify({
+                fileName: file.name,
+                mimeType: file.type || 'application/octet-stream',
+                data: base64Data
+            })
+        });
+
+        if (!response.ok) {
+            throw new Error(`Upload failed: ${response.status}`);
+        }
+
+        const result = await response.json();
+
+        if (!result.success) {
+            throw new Error(result.error || 'Upload failed.');
         }
     }
 
@@ -148,7 +207,9 @@ export default function UploadPage() {
                     onClick={uploadFiles}
                     disabled={!files.length || isUploading}
                 >
-                    {isUploading ? 'Feltöltés folyamatban...' : 'Feltöltés'}
+                    {isUploading
+                        ? 'Feltöltés folyamatban...'
+                        : 'Feltöltés'}
                 </button>
 
                 {isUploading && (
@@ -161,7 +222,7 @@ export default function UploadPage() {
 
                         <div className="upload-progress-header">
                             <span>
-                                {currentFileIndex} / {files.length} fájl
+                                {completedFiles} / {files.length} fájl
                             </span>
 
                             <span>{progress}%</span>
@@ -181,7 +242,9 @@ export default function UploadPage() {
                         </div>
 
                         <p className="current-file-name">
-                            {files[currentFileIndex - 1]?.name}
+                            {activeUploads > 0
+                                ? `${activeUploads} fájl feltöltése folyamatban`
+                                : 'Fájlok előkészítése...'}
                         </p>
                     </div>
                 )}
